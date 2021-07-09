@@ -1,0 +1,86 @@
+@import '../../styles/abstracts/controls';
+
+.tableFileName {
+  flex: 1 1 auto;
+  @extend .flexbox;
+  @extend .item-center;
+  li {
+    flex: 0 0 auto;
+    @extend .flexbox;
+    @extend .item-center;
+    &:not(:last-child) {
+      margin-right: 1rem;
+    }
+    &:last-child {
+      margin-left: auto;
+      @extend .all-center;
+      span {
+        flex: 1 1 auto;
+        min-width: 1.5rem;
+        max-width: 1.5rem;
+        min-height: 1.5rem;
+        max-height: 1.5rem;
+        svg {
+          width: 100%;
+          height: 100%;
+          path {
+            fill: royalblue;
+          }
+        }
+      }
+    }
+    span {
+      flex: 0 0 auto;
+    }
+    a {
+      flex: 0 0 auto;
+      width: 1.5rem;
+      height: 1.5rem;
+      @extend .flexbox;
+      @extend .all-center;
+      img {
+        flex: 0 0 auto;
+      }
+    }
+  }
+}
+.tableFileModified {
+  @extend .flexbox;
+  @extend .item-center;
+  span {
+    flex: 0 0 auto;
+    &:not(:last-child) {
+      margin-right: 1rem;
+    }
+  }
+}
+.tableFileAction {
+  flex: 0 0 auto;
+  width: 0.5rem;
+  height: 0.5rem;
+  cursor: pointer;
+  @extend .flexbox;
+  @extend .all-center;
+}
+.fileInformation {
+  @extend.bg-gray;
+  @extend .flex-column;
+  &__type {
+    @extend .flex-column;
+    @extend .all-center;
+    .iconBlock {
+      max-width: 80px;
+    }
+  }
+  &__buttons {
+    padding-top: 1rem;
+    @extend .flexbox;
+    @extend .all-center;
+  }
+}
+.contentSidebar {
+  padding-left: 3rem;
+  min-width: 300px;
+  flex: 0 1 300px;
+  @extend .flex-column;
+}

@@ -1,0 +1,93 @@
+@import '../../styles/abstracts/controls';
+.formBlock {
+  flex: 1 1 auto;
+  @extend .flex-column;
+  &__elements {
+    flex: 1 1 auto;
+    position: relative;
+    @extend .flex-column;
+    .formLabel {
+      flex: 0 0 auto;
+      margin-bottom: 8px;
+      @extend .flexbox;
+      @extend .item-center;
+      .requiredStar {
+        flex: 0 0 auto;
+        margin-right: 0.25rem;
+        font-size: 1rem;
+        color: theme-colors('background', 'error');
+        @extend .flexbox;
+        @extend .all-center;
+      }
+      .requiredName {
+        flex: 1 1 auto;
+        font-weight: 400;
+        font-size: 0.857rem;
+      }
+    }
+    .formError {
+      position: absolute;
+      min-height: 1rem;
+      bottom: -8px;
+      right: 10px;
+      font-size: 12px;
+      padding: 2px 10px;
+      font-style: italic;
+      background-color: theme-colors('background', 'error', 0.8);
+      color: theme-colors('background', 'white');
+      @include transition(all 0.4s ease-in-out);
+      @extend .flexbox;
+      @extend .item-center;
+      @extend .radius-sm;
+      &:after {
+        bottom: 100%;
+        right: 10px;
+        border: solid transparent;
+        content: '';
+        height: 0;
+        width: 0;
+        position: absolute;
+        pointer-events: none;
+        border-bottom-color: theme-colors('background', 'error', 0.8);
+        border-width: 6px;
+      }
+      span {
+        flex: 0 0 auto;
+        &:first-child {
+          min-width: 14px;
+          max-height: 14px;
+          max-width: 14px;
+          min-height: 14px;
+          margin-right: 6px;
+          @extend .flexbox;
+          @extend .all-center;
+
+          svg {
+            width: 100%;
+            height: 100%;
+            path {
+              fill: theme-colors('background', 'white');
+            }
+          }
+        }
+        &:last-child {
+          flex: 1 1 auto;
+        }
+      }
+    }
+  }
+  &__hints {
+    padding-top: 4px;
+    @extend .flexbox;
+    @extend .item-start;
+    @include transition(all 0.4s ease-in-out);
+    span {
+      flex: 0 0 auto;
+      line-height: 1.5;
+      font-size: 12px;
+      font-style: italic;
+      flex: 1 1 auto;
+      @extend .break-text;
+    }
+  }
+}

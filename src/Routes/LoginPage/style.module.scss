@@ -1,0 +1,176 @@
+@import "../../styles/abstracts/controls";
+
+.welcomewrapper {
+    min-height: 100vh;
+    position: relative;
+   // background-image: url(../../../public/img/login-bg.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    @extend .flex-column;
+        &__forms {
+            flex: 1 1 20%;
+            min-width: 50%;
+            max-width: 50%;
+            margin: auto;
+        }
+    &:before,
+    &:after {
+        position: absolute;
+        content: '';
+    }
+
+    &:before {
+        width: 120px;
+        bottom: 0;
+        left: 20px;
+        overflow: hidden;
+        height: 200px;
+        background-image: url(../../../public/img/login-tree-01.svg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 100%;
+    }
+
+    &:after {
+        width: 100px;
+        bottom: 0;
+        right: 5%;
+        overflow: hidden;
+        height: 170px;
+        background-image: url(../../../public/img/login-tree-02.svg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 100%;
+    }
+         h3 {
+             font-weight: 600;
+             font-size: 50px;
+             text-align: center;
+             margin-top: 2rem;
+             margin-bottom: 2rem;
+         }
+           h2 {
+               font-weight: 200;
+               font-size: 15px;
+               text-align: center;
+               margin-top: 5rem;
+               margin-bottom: 2rem;
+           }
+}
+
+
+
+
+.loginWrapper {
+    min-height: 100vh;
+    @extend .flex-column;
+    .loginBlock {
+        flex: 1 1 auto;
+        @extend .flexbox;
+        @extend .item-stretch;
+        @extend .justify-between;
+        &__content,
+        &__forms {
+            flex: 1 1 50%;
+            min-width: 50%;
+            max-width: 50%;
+        }
+        &__content {
+            position: relative;
+            background-image: url(../../../public/img/login-bg.jpg);
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            @extend .flex-column;
+
+            &:before {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                content: "";
+                z-index: 0;
+                background-color: theme-colors("primary", "light", 0.7);
+            }
+            .contentInner {
+                flex: 1 1 auto;
+                z-index: 2;
+                position: relative;
+                @extend .flex-column;
+                @extend .justify-between;
+
+                .loginLogo {
+                    cursor:pointer;
+                    flex: 0 1 auto;
+                    padding: 3rem;
+                    h2 {
+                        color: theme-colors("background", "white");
+                    }
+                }
+                .loginWelcome {
+                    cursor:default;
+                    flex: 0 1 auto;
+                    padding: 3rem;
+                    h1{
+                        margin-bottom: 1rem;
+                        color: theme-colors("background", "white");
+                    }
+                    h2 {
+                        cursor:pointer;
+                        margin-bottom: 1rem;
+                        color: theme-colors("background", "white");
+                    }
+                    p {
+                        color: theme-colors("background", "white");
+                        font-size: 0.856rem;
+                    }
+                }
+                .loginFooter {
+                    flex: 0 1 auto;
+                    padding: 3rem;
+                    @extend .flexbox;
+                    @extend .item-center;
+                    @extend .justify-between;
+                    p{
+                        color: theme-colors("background", "white");
+                        font-size: 0.856rem;
+                    }
+                    &__list {
+                        flex: 0 0 auto;
+                        @extend .flexbox;
+                        @extend .item-center;
+                        li{
+                            flex: 1 1 auto;
+                            &:not(:last-child){
+                                margin-right: 1rem
+                            }
+                            a{
+                                font-size: 0.856rem;
+                                color: theme-colors("background", "white");
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        &__forms {
+            @extend .flexbox;
+            @extend .all-center;
+            .formsElements{
+                flex: 0 0 auto;
+                min-width: 50%;
+                max-width: 50%;
+                &__list{
+                    @extend .flex-column;
+                    li{
+                        flex: 1 1 auto;
+                        &:not(:last-child){
+                            margin-bottom: 1.5rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+

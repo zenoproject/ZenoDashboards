@@ -1,0 +1,69 @@
+@import "../../styles/abstracts/controls";
+.breadcrumb {
+  background-color: transparent;
+  margin: 0;
+  padding: 0;
+  @extend .flexbox;
+  @extend .item-center;
+  @extend .item-nowrap;
+  @include transition(all 0.8s ease-in-out);
+  &__item {
+    margin: 0;
+    &:last-child {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      @include media('<phone') {
+        width: 150px;
+      }
+      @include media('>=phone', '<576px') {
+        min-width: auto;
+        width: 200px;
+      }
+      @include media('>=576px', '<tablet') {
+        width: 300px;
+      }
+      span {
+        color: theme-colors('primary', 'base');
+        cursor: default;
+        font-size:1rem;
+        font-weight: 500;
+      }
+    }
+    a {
+      cursor: pointer;
+      color: theme-colors('theam', 'dark');
+      font-size:1rem;
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+  &__item + &__item {
+    flex: 0 0 auto;
+    padding-left: 25px;
+    position: relative;
+    &:after,
+    &:before {
+      left: 10px;
+      top: 50%;
+      border: solid transparent;
+      content: '';
+      height: 0;
+      width: 0;
+      position: absolute;
+      pointer-events: none;
+    }
+
+    &:after {
+      border-left-color: theme-colors('background', 'white');
+      border-width: 4px;
+      margin-top: -4px;
+    }
+    &:before {
+      border-left-color: theme-colors('primary', 'light');
+      border-width: 6px;
+      margin-top: -6px;
+    }
+  }
+}

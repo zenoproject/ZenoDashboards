@@ -1,0 +1,25 @@
+@import '../../styles/abstracts/controls';
+.emptyState {
+  @extend .flexbox;
+  @extend .all-center;
+  &__content {
+    @extend .flex-column;
+    @extend .all-center;
+    .emptyImage {
+      max-width: 300px;
+      flex: 0 0 auto;
+      margin-bottom: 1.5rem;
+    }
+    h3 {
+      font-weight: 600;
+      font-size: 16px;
+      margin-bottom: 0.5rem;
+      color: theme-colors('theam', 'dark');
+      text-transform: capitalize;
+      text-align: center;
+    }
+    p {
+      color: theme-colors('primary', 'base', 0.6);
+    }
+  }
+}

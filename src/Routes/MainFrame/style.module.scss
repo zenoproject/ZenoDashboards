@@ -1,0 +1,36 @@
+@import '../../styles/abstracts/controls';
+.mainWrapper {
+  margin: 0;
+  @extend .flexbox;
+  .pageAside {
+    margin: 0;
+    flex: 1 1 auto;
+    position: sticky;
+    min-height: 100vh;
+    max-width: 250px;
+    min-width: 250px;
+    @extend.bg-gray;
+  }
+  .bodyContent {
+    margin: 0;
+    flex: 1 1 auto;
+    border-left: solid 1px theme-colors('primary', 'base', 0.07);
+    max-width: calc(100% - 251px);
+    @extend .flex-column;
+    @extend .justify-between;
+    .mainContent {
+      flex: 1 1 auto;
+      padding: 0 1.5rem;
+      @extend .flexbox;
+      @include animation('fadeIn 0.8s');
+      @include keyframes(fadeIn) {
+        0% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}

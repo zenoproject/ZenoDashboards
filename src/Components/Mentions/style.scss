@@ -1,0 +1,52 @@
+@import '../../styles/abstracts/controls';
+
+.mentions-block {
+  @extend .flex-column;
+  &__control {
+    min-height: 100px;
+    position: relative;
+  }
+  &__input {
+    min-height: 100%;
+    padding: 1rem;
+    border: solid 1px theme-colors('primary', 'light', 0.3);
+    @extend .radius-sm;
+    @include transition(all 0.4s ease-in-out);
+    &:hover,
+    &:focus {
+      outline: 0 !important;
+      border: theme-colors('theam', 'light') 1px solid;
+      @include transition(all 0.4s ease-in-out);
+      @include box-shadow(0 0 0 transparent);
+    }
+  }
+  &__suggestions {
+    margin-top: 20px !important;
+    ul {
+      margin-top: 12px !important;
+      margin-bottom: 0;
+      min-width: 130px i !important;
+      padding: 0.5rem 1rem !important;
+      counter-reset: none !important;
+      background-color: theme-colors('background', 'white');
+      @extend .flex-column;
+      @extend .radius-sm;
+      @include box-shadow(0px 0px 8px theme-colors('primary', 'base', 0.2));
+      li {
+        flex: 0 0 auto;
+        position: relative;
+        font-size: 13px !important;
+        padding: 0.25rem 0 !important;
+        border: 0;
+        counter-increment: none !important;
+        @extend .flex-column;
+        &:not(:last-child) {
+          margin-right: 8px;
+        }
+        &:before {
+          display: none !important;
+        }
+      }
+    }
+  }
+}

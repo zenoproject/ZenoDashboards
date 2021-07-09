@@ -1,0 +1,49 @@
+@import '../../styles/abstracts/controls';
+.mainHeader {
+  flex: 0 1 auto;
+  width: 100%;
+  z-index: 100;
+  height: 7.5rem;
+  background-color: rgba(245, 245, 245, 0.809);
+  @extend .flex-column;
+  @extend .justify-center;
+  .headerInner {
+    padding: 0 1.5rem;
+    @extend .flexbox;
+    @extend .item-center;
+    &__search {
+      min-width: 30%;
+      flex: 0 0 auto;
+      margin-left: 2rem;
+    }
+    &__navigation {
+      margin: 0;
+      margin-left: auto;
+      flex: 0 0 auto;
+      @extend .flexbox;
+      @extend .item-center;
+
+      li {
+        flex: 1 1 auto;
+        &:not(:last-child) {
+          margin-right: 10px;
+        }
+        .showProfile {
+          @extend .flexbox;
+          @extend .all-center;
+          &__image {
+            overflow: hidden;
+            max-width: 40px;
+            min-width: 40px;
+            max-height: 40px;
+            min-height: 40px;
+            @extend .radius-round;
+            img {
+              @extend .radius-round;
+            }
+          }
+        }
+      }
+    }
+  }
+}
